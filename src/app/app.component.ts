@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template:
+    `<app-spinner></app-spinner>
+  <div>
+      <router-outlet></router-outlet>
+  </div>`,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ecommercePrevsisApp';
+
 }
+
