@@ -1,0 +1,32 @@
+.example-card {
+    margin-bottom: 20px;
+}
+
+.container-items {
+    padding-top: 30px;
+    height: 435px;
+    width: 350px;
+    margin: 0 auto;
+}
+
+hr {
+    border: 1px solid;
+}
+
+p span {
+    float: right;
+}
+h1 {
+    padding-top: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+button {
+    float: right;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

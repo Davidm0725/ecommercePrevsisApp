@@ -1,0 +1,29 @@
+<h1> Carrito de compras</h1>
+<div class="container-items">
+    <mat-card class="example-card" *ngFor="let element of shopCar">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{element.fabricante}}</mat-card-title>
+                <mat-card-subtitle>{{element.nombre}}</mat-card-subtitle>
+                <img mat-card-sm-image [src]="element.img">
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            {{element.precio | currency}}
+        </mat-card-content>
+        <div>
+            <button #tooltip="matTooltip" matTooltip="Delete item" (click)="deleteItem(element)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+    <hr>
+    <div>
+        <p style="font-weight: bold;">Total a pagar:
+            <span>
+                {{fullPayment | currency}}
+            </span>
+        </p>
+
+    </div>
+</div>

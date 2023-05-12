@@ -1,3 +1,27 @@
-<div>
-    <span>dashboard works!</span>
-</div>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar>Categorias</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item *ngFor="let e of categories" (click)="chooseOptions(1, e)">{{e.categoria}}</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar style="background-color: black; color: white;">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span class="tittleNav">Shopper prevsis</span>
+            <span class="example-spacer"></span>
+            <div>
+                <span style="cursor: pointer;" (click)="chooseOptions(2, '')">
+                    <mat-icon [matBadge]="itemsInCar" matBadgeColor="warn"
+                        [matBadgeHidden]="itemsInCar == 0">shopping_cart</mat-icon>
+                </span>
+            </div>
+        </mat-toolbar>
+        <app-dashboardcards *ngIf="selectOption === 1" [dataXcategoria]="dataXcategoria" (dataToCar)="addItem($event)"></app-dashboardcards>
+        <app-shoppingcard *ngIf="selectOption === 2" (updateCar)="addItem($event)"></app-shoppingcard>
+    </mat-sidenav-content>
+</mat-sidenav-container>

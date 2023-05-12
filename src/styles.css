@@ -1,11 +1,5 @@
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .overlay {
     margin: 0;
@@ -18,3 +12,8 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+  }

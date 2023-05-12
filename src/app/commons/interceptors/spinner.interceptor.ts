@@ -9,7 +9,6 @@ export class SpinnerInterceptor implements HttpInterceptor {
     private spinnerSvc = inject(SpinnerService)
     constructor() { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log('spninner inter')
         this.spinnerSvc.show();
         return next.handle(req).pipe(
             finalize(() => this.spinnerSvc.hide())

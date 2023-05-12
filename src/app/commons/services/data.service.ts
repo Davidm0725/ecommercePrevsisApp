@@ -32,7 +32,7 @@ export class DataService {
     );
   }
 
-  getHotels(serviceEndpoint: string): Observable<any> {
+  getProducts(serviceEndpoint: string): Observable<any> {
     return this.http.get(serviceEndpoint);
   }
 

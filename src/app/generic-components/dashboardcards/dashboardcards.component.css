@@ -1,0 +1,21 @@
+.content {
+    padding: 16px;
+}
+
+content>mat-card {
+    width: 200px;
+}
+
+button {
+    background: black !important;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background-color: gray !important;
+}
+
+.mat-mdc-card-lg-image {
+    width: 180px;
+    height: 152px;
+}

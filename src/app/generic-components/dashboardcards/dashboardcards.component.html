@@ -1,0 +1,24 @@
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of goods, let i = index">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>{{item.fabricante}}</mat-card-title>
+                    <mat-card-subtitle>{{item.nombre}} {{item.modelo}}</mat-card-subtitle>
+                </mat-card-header>
+                <div style="text-align:  center;">
+                    <img mat-card-lg-image [src]="item.img">
+                </div>
+                <mat-card-content>
+                    <p><strong>Precio: </strong>{{item.precio | currency}}</p>
+                    <p><strong>Stock: </strong>{{item.cantidad}}</p>
+                </mat-card-content>
+                <button [id]="'btn-'+i" mat-raised-button color="primary" (click)="addCar(item)"
+                    [disabled]="item.select">
+                    agregar al carrito
+                    <mat-icon>add_shopping_cart</mat-icon>
+                </button>
+            </mat-card>
+        </div>
+    </div>
+</div>
